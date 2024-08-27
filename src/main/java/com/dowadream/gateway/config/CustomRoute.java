@@ -16,10 +16,14 @@ public class CustomRoute {
     @Bean
     public RouteLocator cRoute(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route("board", r -> r.path("/board/**")
+                .route("customercare", r -> r.path("/customercare/**")
                         .and()
-                        .method(HttpMethod.POST)
-                        .uri("lb://DEMO"))
+                        .method(HttpMethod.POST,HttpMethod.GET,HttpMethod.PUT,HttpMethod.DELETE)
+                        .uri("lb://CUSTOMERCARE"))
+                .route("errandservice", r -> r.path("/api/**")
+                        .and()
+                        .method(HttpMethod.POST,HttpMethod.GET,HttpMethod.PUT,HttpMethod.DELETE)
+                        .uri("lb://ERRANDSERVICE"))
                 .build();
     }
 }

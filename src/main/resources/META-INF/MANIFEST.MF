@@ -1,0 +1,63 @@
+Manifest-Version: 1.0
+Main-Class: com.dowadream.gateway.GatewayApplication
+Class-Path: failureaccess-1.0.2.jar spring-cloud-netflix-eureka-client-4
+ .1.3.jar junit-jupiter-params-5.10.3.jar netty-codec-http2-4.1.111.Fina
+ l.jar jboss-logging-3.5.3.Final.jar jackson-module-parameter-names-2.17
+ .2.jar listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar a
+ ntlr-runtime-3.4.jar netty-buffer-4.1.111.Final.jar checker-qual-3.41.0
+ .jar spring-boot-3.3.2.jar httpclient-4.5.3.jar log4j-to-slf4j-2.23.1.j
+ ar logback-classic-1.5.6.jar spring-cloud-gateway-server-4.1.5.jar eure
+ ka-client-2.0.3.jar spring-boot-starter-logging-3.3.2.jar netty-common-
+ 4.1.111.Final.jar spring-security-rsa-1.1.3.jar mockito-core-5.11.0.jar
+  httpcore5-h2-5.2.5.jar json-smart-2.5.1.jar spring-cloud-loadbalancer-
+ 4.1.4.jar spring-aop-6.1.11.jar objenesis-3.3.jar spring-jcl-6.1.11.jar
+  netty-handler-4.1.111.Final.jar jjwt-api-0.12.3.jar jackson-annotation
+ s-2.17.2.jar jettison-1.5.4.jar spring-boot-starter-3.3.2.jar spring-bo
+ ot-starter-cache-3.3.2.jar jjwt-jackson-0.12.3.jar spring-security-conf
+ ig-6.3.1.jar error_prone_annotations-2.23.0.jar httpcore-4.4.16.jar xml
+ unit-core-2.9.1.jar jakarta.inject-api-2.0.1.jar netty-resolver-dns-cla
+ sses-macos-4.1.111.Final.jar hamcrest-2.2.jar commons-configuration-1.1
+ 0.jar joda-time-2.3.jar junit-jupiter-api-5.10.3.jar spring-boot-autoco
+ nfigure-3.3.2.jar spring-security-web-6.3.1.jar netty-codec-http-4.1.11
+ 1.Final.jar spring-cloud-starter-loadbalancer-4.1.4.jar reactor-netty-h
+ ttp-1.1.21.jar gson-2.10.1.jar commons-codec-1.16.1.jar netty-transport
+ -classes-epoll-4.1.111.Final.jar spring-boot-starter-test-3.3.2.jar and
+ roid-json-0.0.20131108.vaadin1.jar jsonassert-1.5.3.jar spring-context-
+ 6.1.11.jar mxparser-1.2.2.jar jakarta.xml.bind-api-4.0.2.jar micrometer
+ -observation-1.13.2.jar netty-handler-proxy-4.1.111.Final.jar spring-te
+ st-6.1.11.jar netty-transport-native-unix-common-4.1.111.Final.jar spri
+ ng-boot-test-3.3.2.jar spring-core-6.1.11.jar jackson-datatype-jdk8-2.1
+ 7.2.jar spring-security-core-6.3.1.jar spring-web-6.1.11.jar log4j-api-
+ 2.23.1.jar jakarta.annotation-api-2.1.1.jar spring-cloud-commons-4.1.4.
+ jar servo-core-0.5.3.jar jackson-core-2.17.2.jar tomcat-embed-el-10.1.2
+ 6.jar spring-cloud-starter-4.1.4.jar httpcore5-5.2.5.jar logback-core-1
+ .5.6.jar spring-context-support-6.1.11.jar netty-codec-dns-4.1.111.Fina
+ l.jar junit-jupiter-5.10.3.jar byte-buddy-1.14.18.jar netty-resolver-dn
+ s-4.1.111.Final.jar commons-jxpath-1.3.jar stringtemplate-3.2.1.jar jac
+ kson-databind-2.17.2.jar bcprov-jdk18on-1.78.jar netty-codec-4.1.111.Fi
+ nal.jar javax.annotation-api-1.2.jar junit-jupiter-engine-5.10.3.jar ju
+ l-to-slf4j-2.0.13.jar jakarta.validation-api-3.0.2.jar jjwt-impl-0.12.3
+ .jar spring-expression-6.1.11.jar netty-transport-native-epoll-4.1.111.
+ Final-linux-x86_64.jar spectator-api-1.7.3.jar reactive-streams-1.0.4.j
+ ar jakarta.activation-api-2.1.3.jar commons-math-2.2.jar asm-9.6.jar sp
+ ring-boot-starter-security-3.3.2.jar spring-boot-starter-json-3.3.2.jar
+  awaitility-4.2.1.jar micrometer-commons-1.13.2.jar opentest4j-1.3.0.ja
+ r spring-boot-starter-webflux-3.3.2.jar spring-cloud-starter-netflix-eu
+ reka-client-4.1.3.jar netty-resolver-4.1.111.Final.jar antlr-2.7.7.jar 
+ spring-boot-starter-reactor-netty-3.3.2.jar eureka-core-2.0.3.jar woods
+ tox-core-6.2.1.jar spring-cloud-context-4.1.4.jar hibernate-validator-8
+ .0.1.Final.jar jackson-datatype-jsr310-2.17.2.jar guava-33.0.0-jre.jar 
+ junit-platform-commons-1.10.3.jar spring-webflux-6.1.11.jar netty-resol
+ ver-dns-native-macos-4.1.111.Final-osx-x86_64.jar junit-platform-launch
+ er-1.10.3.jar spring-cloud-starter-gateway-4.1.5.jar evictor-1.0.0.jar 
+ assertj-core-3.25.3.jar xstream-1.4.20.jar httpclient5-5.3.1.jar spring
+ -boot-starter-validation-3.3.2.jar xmlpull-1.1.3.1.jar mockito-junit-ju
+ piter-5.11.0.jar json-path-2.9.0.jar netty-codec-socks-4.1.111.Final.ja
+ r reactor-netty-core-1.1.21.jar accessors-smart-2.5.1.jar slf4j-api-2.0
+ .13.jar reactor-core-3.6.8.jar spring-security-crypto-6.3.1.jar spring-
+ boot-test-autoconfigure-3.3.2.jar netflix-infix-0.3.0.jar jakarta.ws.rs
+ -api-3.1.0.jar reactor-extra-3.5.1.jar junit-platform-engine-1.10.3.jar
+  spring-beans-6.1.11.jar netflix-eventbus-0.3.0.jar classmate-1.7.0.jar
+  stax2-api-4.2.1.jar commons-lang-2.6.jar snakeyaml-2.2.jar byte-buddy-
+ agent-1.14.18.jar netty-transport-4.1.111.Final.jar
+

@@ -1,4 +1,5 @@
 package com.dowadream.gateway.JWT;
+
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.ReactiveSecurityContextHolder;
 import org.springframework.security.core.context.SecurityContextImpl;
@@ -29,10 +30,11 @@ public class JWTFilter implements WebFilter {
                 String role = jwtUtil.getRole(token);
 
                 var auth = new UsernamePasswordAuthenticationToken(
-                        username, null, Collections.singletonList(() -> role)
+                        username, null, Collections.singletonList(() -> "ROLE_" + role)
                 );
 
                 var context = new SecurityContextImpl(auth);
+
                 return chain.filter(exchange)
                         .contextWrite(ReactiveSecurityContextHolder.withSecurityContext(Mono.just(context)));
             }
