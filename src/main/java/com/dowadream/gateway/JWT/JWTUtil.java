@@ -21,8 +21,8 @@ public class JWTUtil {
         this.secretKey = new SecretKeySpec(secret.getBytes(StandardCharsets.UTF_8), SignatureAlgorithm.HS256.getJcaName());
     }
 
-    public String getUserName(String token) {
-        return getClaims(token).get("userName", String.class);
+    public String getUserEmail(String token) {
+        return getClaims(token).get("userEmail", String.class);
     }
 
     public String getRole(String token) {
@@ -33,9 +33,9 @@ public class JWTUtil {
         return getClaims(token).getExpiration().before(new Date());
     }
 
-    public String createJwt(String username, String role, Long expiredMs) {
+    public String createJwt(String userEmail, String role, Long expiredMs) {
         return Jwts.builder()
-                .claim("userName", username)
+                .claim("userEmail", userEmail)
                 .claim("role", role)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + expiredMs))
@@ -44,7 +44,7 @@ public class JWTUtil {
     }
 
     // 토큰의 서명 검증 및 클레임 반환
-    private Claims getClaims(String token) {
+    public Claims getClaims(String token) {
         return Jwts.parser()
                 .setSigningKey(secretKey)
                 .build()

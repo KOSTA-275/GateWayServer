@@ -1,5 +1,6 @@
 package com.dowadream.gateway.config;
 
+import com.dowadream.gateway.JWT.AddEmailFilter;
 import com.dowadream.gateway.JWT.JWTFilter;
 import com.dowadream.gateway.JWT.JWTUtil;
 import org.springframework.context.annotation.Bean;
@@ -32,11 +33,16 @@ public class SecurityConfig {
 
         // JWT 필터 추가
         http.addFilterAt(new JWTFilter(jwtUtil), SecurityWebFiltersOrder.AUTHENTICATION);
+        http.addFilterAt(new AddEmailFilter(jwtUtil), SecurityWebFiltersOrder.AUTHENTICATION);
+
         // CORS 설정 추가
         http.cors(cors -> cors
                 .configurationSource(request -> {
                     var corsConfig = new CorsConfiguration();
                     corsConfig.addAllowedOrigin("http://ec2-3-35-253-143.ap-northeast-2.compute.amazonaws.com:3000"); // 허용할 출처
+                    corsConfig.addAllowedOrigin("http://ec2-15-164-115-147.ap-northeast-2.compute.amazonaws.com:3000"); // 허용할 출처
+                    corsConfig.addAllowedOrigin("http://ec2-3-39-66-166.ap-northeast-2.compute.amazonaws.com:3000"); // 허용할 출처
+                    corsConfig.addAllowedOrigin("http://ec2-43-200-98-34.ap-northeast-2.compute.amazonaws.com:3000"); // 허용할 출처
                     corsConfig.addAllowedMethod("*"); // 허용할 HTTP 메서드
                     corsConfig.addAllowedHeader("*"); // 허용할 헤더
                     corsConfig.setAllowCredentials(true); // 자격 증명 허용
@@ -47,11 +53,12 @@ public class SecurityConfig {
         // 접근 권한 설정
         http.authorizeExchange(exchange ->
                 exchange
-                        .pathMatchers("/jwt/**").permitAll() // 인증 필요 없음
-                        .pathMatchers("/board/**").hasAnyRole("ADMIN", "USER") // ADMIN 또는 USER 권한이 있는 사용자만 접근 허용
-                        .pathMatchers("/customercare/inquiry_nolist").permitAll()
-                        .pathMatchers("/customercare/**").hasAnyRole("ADMIN", "USER") // ADMIN 또는 USER 권한이 있는 사용자만 접근 허용
-                        .pathMatchers("/user/**").hasRole("USER")
+                        .pathMatchers("/jwt/login_success").permitAll() // 인증 필요 없음
+                        .pathMatchers("/users/login").permitAll() // 인증 필요 없음
+                        .pathMatchers("/customercare/**").hasAnyRole("ADMIN","CLIENT")
+                        .pathMatchers("/ErrandService/**").hasAnyRole("ADMIN", "CLIENT") // ADMIN 또는 USER 권한이 있는 사용자만 접근 허용
+                        .pathMatchers("/users/**").hasRole("CLIENT")
+                        .pathMatchers("/jwt/role_auth").hasRole("ADMIN")
                         .anyExchange().authenticated() // 나머지 요청은 인증 필요
         );
         // 권한이 부족할 때 HTTP 403 Forbidden 응답과 한글 메시지 반환
